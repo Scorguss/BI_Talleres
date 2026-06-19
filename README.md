@@ -248,7 +248,6 @@ Kimball, R., & Ross, M. (2013). *The Data Warehouse Toolkit: The Definitive Guid
 
 Inmon, W. H. (2005). *Building the Data Warehouse* (4th ed.). Wiley.
 
-PostgreSQL Global Development Group. (2026). *PostgreSQL Documentation*. https://www.postgresql.org/docs/
 
 # Declaración de Uso de Inteligencia Artificial
 
