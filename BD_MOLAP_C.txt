@@ -1,0 +1,198 @@
+--ESCUELA POLITECNICA NACIONAL
+--BUSINNESS INTELLIGENCE
+--GRUPO C
+-- =========================
+-- DIMENSIONES
+-- =========================
+
+CREATE TABLE dim_fecha (
+    id_fecha INTEGER PRIMARY KEY,
+    fecha DATE NOT NULL,
+    dia INTEGER,
+    mes INTEGER,
+    anio INTEGER,
+    trimestre INTEGER
+);
+
+CREATE TABLE dim_paciente (
+    sk_paciente INTEGER PRIMARY KEY,
+    id_paciente INTEGER NOT NULL,
+    edad INTEGER,
+    genero VARCHAR(20)
+);
+
+CREATE TABLE dim_ciudad (
+    id_ciudad INTEGER PRIMARY KEY,
+    ciudad VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE dim_especialidad (
+    id_especialidad INTEGER PRIMARY KEY,
+    id_doctor INTEGER,
+    especialidad VARCHAR(100),
+    hospital_department VARCHAR(100)
+);
+
+CREATE TABLE dim_diagnostico (
+    id_diagnostico INTEGER PRIMARY KEY,
+    diagnostico VARCHAR(255),
+    tipo_proceso VARCHAR(100)
+);
+
+CREATE TABLE dim_seguro (
+    id_seguro INTEGER PRIMARY KEY,
+    seguro VARCHAR(100)
+);
+
+CREATE TABLE dim_resultado (
+    id_resultado INTEGER PRIMARY KEY,
+    outcome VARCHAR(100)
+);
+
+-- =========================
+-- TABLA DE HECHOS
+-- =========================
+
+CREATE TABLE fact_visita (
+    id_visita BIGINT PRIMARY KEY,
+
+    id_fecha INTEGER NOT NULL,
+    sk_paciente INTEGER NOT NULL,
+    id_ciudad INTEGER NOT NULL,
+    id_especialidad INTEGER NOT NULL,
+    id_diagnostico INTEGER NOT NULL,
+    id_seguro INTEGER NOT NULL,
+    id_resultado INTEGER NOT NULL,
+
+    is_emergency BOOLEAN,
+
+    length_of_stay INTEGER,
+
+    cost_medicine NUMERIC(12,2),
+    cost_procedure NUMERIC(12,2),
+    total_cost NUMERIC(12,2),
+
+    CONSTRAINT fk_fact_fecha
+        FOREIGN KEY (id_fecha)
+        REFERENCES dim_fecha(id_fecha),
+
+    CONSTRAINT fk_fact_paciente
+        FOREIGN KEY (sk_paciente)
+        REFERENCES dim_paciente(sk_paciente),
+
+    CONSTRAINT fk_fact_ciudad
+        FOREIGN KEY (id_ciudad)
+        REFERENCES dim_ciudad(id_ciudad),
+
+    CONSTRAINT fk_fact_especialidad
+        FOREIGN KEY (id_especialidad)
+        REFERENCES dim_especialidad(id_especialidad),
+
+    CONSTRAINT fk_fact_diagnostico
+        FOREIGN KEY (id_diagnostico)
+        REFERENCES dim_diagnostico(id_diagnostico),
+
+    CONSTRAINT fk_fact_seguro
+        FOREIGN KEY (id_seguro)
+        REFERENCES dim_seguro(id_seguro),
+
+    CONSTRAINT fk_fact_resultado
+        FOREIGN KEY (id_resultado)
+        REFERENCES dim_resultado(id_resultado)
+);
+
+CREATE INDEX idx_fact_fecha
+ON fact_visita(id_fecha);
+
+CREATE INDEX idx_fact_paciente
+ON fact_visita(sk_paciente);
+
+CREATE INDEX idx_fact_ciudad
+ON fact_visita(id_ciudad);
+
+CREATE INDEX idx_fact_especialidad
+ON fact_visita(id_especialidad);
+
+CREATE INDEX idx_fact_diagnostico
+ON fact_visita(id_diagnostico);
+
+CREATE INDEX idx_fact_seguro
+ON fact_visita(id_seguro);
+
+CREATE INDEX idx_fact_resultado
+ON fact_visita(id_resultado);
+
+--========================--
+		--CONSULTAS--
+--========================--
+--ALTER TABLE dim_fecha
+--ALTER COLUMN trimestre TYPE VARCHAR(2);
+--EJERCICIO 1: SLICE and DICE
+SELECT
+    e.especialidad,
+    c.ciudad,
+    f.mes,
+    SUM(v.total_cost) AS costo_total
+FROM fact_visita v
+JOIN dim_especialidad e
+    ON v.id_especialidad = e.id_especialidad
+JOIN dim_ciudad c
+    ON v.id_ciudad = c.id_ciudad
+JOIN dim_fecha f
+    ON v.id_fecha = f.id_fecha
+GROUP BY
+    e.especialidad,
+    c.ciudad,
+    f.mes
+ORDER BY
+    e.especialidad,
+    c.ciudad,
+    f.mes;
+
+--======================--
+--EJERCICIO 2--
+--======================--
+--DRILL DOWN
+SELECT
+    f.mes,
+    p.genero,
+    c.ciudad,
+    COUNT(*) AS total_emergencias
+FROM fact_visita v
+JOIN dim_fecha f
+    ON v.id_fecha = f.id_fecha
+JOIN dim_paciente p
+    ON v.sk_paciente = p.sk_paciente
+JOIN dim_ciudad c
+    ON v.id_ciudad = c.id_ciudad
+WHERE v.is_emergency = TRUE
+GROUP BY
+    f.mes,
+    p.genero,
+    c.ciudad
+ORDER BY
+    f.mes,
+    p.genero,
+    total_emergencias DESC;
+--===================--
+--EJERCICIO 3
+--===================--
+--Dice+Rank 
+SELECT
+    d.diagnostico,
+    s.seguro,
+    c.ciudad,
+    ROUND(AVG(v.total_cost),2) AS costo_promedio
+FROM fact_visita v
+JOIN dim_diagnostico d
+    ON v.id_diagnostico = d.id_diagnostico
+JOIN dim_seguro s
+    ON v.id_seguro = s.id_seguro
+JOIN dim_ciudad c
+    ON v.id_ciudad = c.id_ciudad
+GROUP BY
+    d.diagnostico,
+    s.seguro,
+    c.ciudad
+ORDER BY costo_promedio DESC;
+
