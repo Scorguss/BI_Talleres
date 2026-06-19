@@ -225,6 +225,9 @@ ORDER BY costo_promedio DESC;
 **Figura 4. Resultado de la Consulta 3**
 
 <img width="782" height="287" alt="image" src="https://github.com/user-attachments/assets/37070f31-869f-44a2-b7b3-3d58160ba51e" />
+<img width="781" height="707" alt="image" src="https://github.com/user-attachments/assets/f1f2d717-b0d4-4bd4-a10d-22aae40c7461" />
+<img width="775" height="710" alt="image" src="https://github.com/user-attachments/assets/98b5e8f4-5a66-4ea0-9f83-721cff342a43" />
+<img width="786" height="252" alt="image" src="https://github.com/user-attachments/assets/989c232c-7247-433a-ae7f-342eb526cdbb" />
 
 
 **Descripción:** Costo promedio por visita considerando diagnóstico, seguro y ciudad.
