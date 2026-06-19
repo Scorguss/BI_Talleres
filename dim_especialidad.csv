@@ -1,0 +1,78 @@
+﻿id_especialidad,id_doctor,especialidad,hospital_department
+1,6,Medicina General,Emergencias
+2,7,Medicina General,Emergencias
+3,8,Medicina General,Emergencias
+4,9,Medicina General,Emergencias
+5,10,Medicina General,Pediatría
+6,10,Cardiología,Medicina Interna
+7,11,Medicina General,Emergencias
+8,11,Medicina General,Pediatría
+9,12,Medicina General,Pediatría
+10,12,Cardiología,Medicina Interna
+11,13,Neumología,Medicina Interna
+12,13,Medicina General,Emergencias
+13,13,Medicina General,Pediatría
+14,14,Medicina General,Emergencias
+15,14,Cardiología,Medicina Interna
+16,15,Medicina General,Emergencias
+17,15,Neumología,Medicina Interna
+18,16,Medicina General,Pediatría
+19,17,Medicina General,Emergencias
+20,17,Cardiología,Medicina Interna
+21,17,Medicina General,Pediatría
+22,18,Neumología,Medicina Interna
+23,18,Medicina General,Emergencias
+24,18,Medicina General,Pediatría
+25,19,Medicina General,Emergencias
+26,19,Cardiología,Medicina Interna
+27,20,Cardiología,Medicina Interna
+28,20,Neumología,Medicina Interna
+29,21,Cardiología,Medicina Interna
+30,21,Medicina General,Pediatría
+31,22,Medicina General,Pediatría
+32,22,Neumología,Pediatría
+33,22,Cardiología,Medicina Interna
+34,23,Medicina General,Pediatría
+35,24,Cardiología,Medicina Interna
+36,25,Medicina General,Emergencias
+37,26,Medicina General,Emergencias
+38,27,Traumatología,Cirugía
+39,27,Cardiología,Medicina Interna
+40,28,Neumología,Medicina Interna
+41,28,Traumatología,Cirugía
+42,29,Cardiología,Medicina Interna
+43,29,Neumología,Medicina Interna
+44,30,Traumatología,Cirugía
+45,30,Neumología,Medicina Interna
+46,31,Traumatología,Cirugía
+47,32,Neumología,Medicina Interna
+48,33,Traumatología,Cirugía
+49,33,Neumología,Medicina Interna
+50,34,Cardiología,Medicina Interna
+51,34,Traumatología,Cirugía
+52,35,Traumatología,Cirugía
+53,36,Oncología,Medicina Interna
+54,37,Oncología,Cirugía
+55,38,Cardiología,Medicina Interna
+56,38,Traumatología,Cirugía
+57,39,Traumatología,Cirugía
+58,40,Oncología,Medicina Interna
+59,40,Oncología,Cirugía
+60,41,Oncología,Cirugía
+61,41,Traumatología,Cirugía
+62,42,Oncología,Cirugía
+63,43,Oncología,Cirugía
+64,44,Traumatología,Cirugía
+65,45,Traumatología,Cirugía
+66,46,Traumatología,Cirugía
+67,47,Traumatología,Cirugía
+68,48,Traumatología,Cirugía
+69,49,Traumatología,Cirugía
+70,50,Ginecología,Ginecología
+71,52,Traumatología,Cirugía
+72,53,Oncología,Cirugía
+73,55,Ginecología,Ginecología
+74,57,Ginecología,Ginecología
+75,57,Traumatología,Cirugía
+76,59,Ginecología,Ginecología
+77,60,Ginecología,Ginecología

@@ -1,0 +1,22 @@
+﻿id_diagnostico,diagnostico,tipo_proceso
+1,Covid-19,Hospitalización
+2,Covid-19,Consulta
+3,Cáncer,Cirugía menor
+4,Cáncer,Consulta
+5,Cáncer,Cirugía mayor
+6,Cáncer,Hospitalización
+7,Cáncer,Control
+8,Diabetes,Consulta
+9,Diabetes,Control
+10,Embarazo,Hospitalización
+11,Embarazo,Consulta
+12,Embarazo,Control
+13,Fractura,Cirugía mayor
+14,Fractura,Hospitalización
+15,Fractura,Cirugía menor
+16,Fractura,Consulta
+17,Hipertensión,Consulta
+18,Hipertensión,Control
+19,Neumonía,Hospitalización
+20,Neumonía,Control
+21,Neumonía,Consulta
