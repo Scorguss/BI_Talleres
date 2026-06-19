@@ -73,9 +73,7 @@ La tabla de hechos almacena métricas relacionadas con costos, duración de esta
 
 **Descripción:** Esquema estrella utilizado para la implementación del almacén de datos en PostgreSQL.
 
-> Insertar aquí la imagen del modelo estrella.
-
-![Modelo Estrella](imagenes/modelo_estrella.png)
+<img width="976" height="962" alt="image" src="https://github.com/user-attachments/assets/bb92f189-137a-43cf-a2e3-fc51b580ff4b" />
 
 # Carga de Datos en PostgreSQL
 
@@ -142,9 +140,10 @@ ORDER BY
 
 **Figura 2. Resultado de la Consulta 1**
 
-> Insertar captura de pantalla del resultado.
+<img width="641" height="701" alt="image" src="https://github.com/user-attachments/assets/45abf3c4-3184-44f7-a0df-99f8845db6b5" />
+<img width="636" height="713" alt="image" src="https://github.com/user-attachments/assets/1ff21d2f-83c8-417e-929c-fe6e9884bdc1" />
+<img width="648" height="437" alt="image" src="https://github.com/user-attachments/assets/0086b266-0141-44f0-aca9-072861523f2a" />
 
-![Consulta1](imagenes/consulta1.png)
 
 **Descripción:** Costos totales agrupados por especialidad médica, ciudad y mes.
 
@@ -186,9 +185,8 @@ ORDER BY
 
 **Figura 3. Resultado de la Consulta 2**
 
-> Insertar captura de pantalla del resultado.
+<img width="682" height="680" alt="image" src="https://github.com/user-attachments/assets/4a6791f6-b1d3-4efb-9fe4-e11e244535b8" />
 
-![Consulta2](imagenes/consulta2.png)
 
 **Descripción:** Total de emergencias agrupadas por ciudad, mes y género.
 
@@ -226,9 +224,8 @@ ORDER BY costo_promedio DESC;
 
 **Figura 4. Resultado de la Consulta 3**
 
-> Insertar captura de pantalla del resultado.
+<img width="782" height="287" alt="image" src="https://github.com/user-attachments/assets/37070f31-869f-44a2-b7b3-3d58160ba51e" />
 
-![Consulta3](imagenes/consulta3.png)
 
 **Descripción:** Costo promedio por visita considerando diagnóstico, seguro y ciudad.
 
