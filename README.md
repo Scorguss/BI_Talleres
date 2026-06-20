@@ -1,17 +1,18 @@
-# UNIVERSIDAD POLITÉCNICA NACIONAL
+# ESCUELA POLITÉCNICA NACIONAL
 
 ## Práctica de Data Warehouse y Consultas OLAP
 
 **Asignatura:** Inteligencia de Negocios
-**Paralelo:** [Paralelo]
-**Docente:** [Nombre del docente]
+**Paralelo:** GR2SW_2026-1
+**Docente:** Diana Martinez
 
 **Integrantes:**
 
-* [Integrante 1]
-* [Integrante 2]
-* [Integrante 3]
-
+* Nayeli Leiva
+* Ricardo Villarreal
+* Donoban Ramon
+* Daniel Jaramillo
+* Leonardo Maldonado
 **Fecha:** 19 de junio de 2026
 
 ---
